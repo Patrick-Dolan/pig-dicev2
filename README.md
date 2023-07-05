@@ -68,6 +68,17 @@ then "Game.playerTurn = 0" would indicate that it is playerOne's turn
 If "Game.playerTurn = 1" it would indicate that it is playerTwo's turn
 ```
 
+At this point I think it would help to have a general outline of the flow of the project. This will help me plan out the methods that the game and player objects will need. 
+1. Set up player objects
+2. Set up Game object  
+  (setup method?) Add player objects to game object players property 
+3. Start game/round  
+  (roll method) Roll dice and evaluate whether to add to roundScore or switch turns on 1
+4. Change turns  
+  (change turn method) activates on roll of 1 or if player chooses to "hold". If player chooses to hold add roundScore to player before resetting to zero.
+5. Evaluate scores to determine if there is a winner.  
+  (evaluate game state method) If a player's score is over 100 that player wins else keep playing.
+6. Add ability to reset game.
 ### Tests
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
