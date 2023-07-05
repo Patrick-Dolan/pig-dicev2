@@ -26,7 +26,7 @@ _Rules and game information taken from wikipedia entry for [Pig Dice](https://en
 ## Setup/Installation Requirements
 
 * Download or Clone the repo down to your computer.
-* Navigate into the "pig-dice" directory you just downloaded and double click the index.html to launch the webpage.
+* Navigate into the "pig-dicev2" directory you just downloaded and double click the index.html to launch the webpage.
 
 ## Known Bugs
 
