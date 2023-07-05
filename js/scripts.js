@@ -13,9 +13,14 @@ function Game(playerOne, playerTwo) {
   this.roundScore = 0;
 }
 
+Game.prototype.rollDice = function() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
 window.addEventListener("load", () => {
   let playerOne = new Player("Patrick");
   let playerTwo = new Player("Abi");
   let game = new Game(playerOne, playerTwo);
-  console.log("Constructor test: ", game);
+  let roll = game.rollDice();
+  console.log("Roll Dice test: ", roll);
 });

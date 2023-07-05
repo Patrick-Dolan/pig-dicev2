@@ -130,3 +130,15 @@ game;
 Expected Output:
 { players: [playerOne, playerTwo], playerTurn: 0, roundScore: 0 }
 ```
+
+```
+Test: "Can roll a dice and get a number between 1 and 6"
+
+Code:
+let game = new Game(playerOne, playerTwo);
+let roll = game.rollDice();
+roll;
+
+Expected Output:
+A number between 1-6
+```
