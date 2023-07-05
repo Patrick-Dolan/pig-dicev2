@@ -72,7 +72,7 @@ If "Game.playerTurn = 1" it would indicate that it is playerTwo's turn
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
 
-Player Tests:
+#### Player Tests:
 
 ```
 Describe: Player()
@@ -114,7 +114,7 @@ Expected Output:
 8
 ```
 
-Game Tests:
+#### Game Tests:
 
 ```
 Describe: Game()
@@ -124,18 +124,31 @@ Describe: Game()
 Test: "Can create a Game object with basic game information"
 
 Code:
-let game = new Game(playerOne, playerTwo);
+let game = new Game();
 game;
 
 Expected Output:
-{ players: [playerOne, playerTwo], playerTurn: 0, roundScore: 0 }
+{ players: [], playerTurn: 0, roundScore: 0 }
+```
+
+```
+Test: "Can add players to game objects player array"
+
+Code:
+let playerOne = new Player("Patrick");
+let game = new Game();
+game.addPlayer(playerOne);
+game;
+
+Expected Output:
+{ players: [playerOne], playerTurn: 0, roundScore: 0 }
 ```
 
 ```
 Test: "Can roll a dice and get a number between 1 and 6"
 
 Code:
-let game = new Game(playerOne, playerTwo);
+let game = new Game();
 let roll = game.rollDice();
 roll;
 

@@ -7,10 +7,14 @@ Player.prototype.addScore = function(roundScore) {
   this.score += roundScore;
 };
 
-function Game(playerOne, playerTwo) {
-  this.players = [playerOne, playerTwo];
+function Game() {
+  this.players = [];
   this.playerTurn = 0;
   this.roundScore = 0;
+}
+
+Game.prototype.addPlayer = function(player) {
+  this.players.push(player);
 }
 
 Game.prototype.rollDice = function() {
@@ -20,7 +24,8 @@ Game.prototype.rollDice = function() {
 window.addEventListener("load", () => {
   let playerOne = new Player("Patrick");
   let playerTwo = new Player("Abi");
-  let game = new Game(playerOne, playerTwo);
-  let roll = game.rollDice();
-  console.log("Roll Dice test: ", roll);
+  let game = new Game();
+  game.addPlayer(playerOne);
+  game.addPlayer(playerTwo);
+  console.log("Game refactor test: ", game);
 });
