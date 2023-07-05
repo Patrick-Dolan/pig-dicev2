@@ -45,6 +45,8 @@ Game.prototype.evaluateRoll = function(currentRoll) {
   if (currentRoll === 1) {
     this.roundScore = 0;
     this.changeTurns();
+  } else {
+    this.roundScore += currentRoll;
   }
 }
 
@@ -58,7 +60,7 @@ window.addEventListener("load", () => {
   game.addPlayer(playerOne);
   game.addPlayer(playerTwo);
   game.roundScore = 34;
-  let currentRoll = 1;
+  let currentRoll = 3;
   game.evaluateRoll(currentRoll);
   console.log("Game evaluateRoll test: ", game);
 });

@@ -251,3 +251,21 @@ game;
 Expected Output:
 { players: [playerOne, playerTwo], playerTurn: 1, roundScore: 0, gameOver: false }
 ```
+
+```
+Test: "If roll is anything other than 1 it will add roll to roundScore"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.roundScore = 34;
+let currentRoll = 3;
+game.evaluateRoll(currentRoll);
+game;
+
+Expected Output:
+{ players: [playerOne, playerTwo], playerTurn: 0, roundScore: 37, gameOver: false }
+```
