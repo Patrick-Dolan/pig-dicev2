@@ -59,6 +59,16 @@ Game.prototype.holdAction = function() {
   this.changeTurns();
 }
 
+Game.prototype.getWinner = function() {
+  let winner = this.players[0];
+  this.players.forEach((player) => {
+    if (player.score > winner.score) {
+      winner = player;
+    }
+  });
+  return winner;
+}
+
 // UI Logic
 // ==========================
 
@@ -70,6 +80,8 @@ window.addEventListener("load", () => {
   game.addPlayer(playerTwo);
   game.roundScore = 100;
   game.holdAction();
+  let winner = game.getWinner();
+
   console.log("Game hold action change turn test: ", game);
-  console.log("Player one still updates: ", playerOne.score);
+  console.log("Winner found: ", winner);
 });
