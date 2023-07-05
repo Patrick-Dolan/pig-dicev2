@@ -143,6 +143,10 @@ Expected Output:
 ```
 
 ```
+Describe: Game.prototype.addPlayer()
+```
+
+```
 Test: "Can add players to game objects player array"
 
 Code:
@@ -156,6 +160,10 @@ Expected Output:
 ```
 
 ```
+Describe: Game.prototype.rollDice()
+```
+
+```
 Test: "Can roll a dice and get a number between 1 and 6"
 
 Code:
@@ -165,4 +173,24 @@ roll;
 
 Expected Output:
 A number between 1-6
+```
+
+```
+Describe: Game.prototype.changeTurns()
+```
+
+```
+Test: "It will change the current players turn"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.changeTurns();
+game.playerTurn;
+
+Expected Output:
+1
 ```
