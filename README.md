@@ -17,7 +17,7 @@ Pig dice is a simple dice game where players take turns rolling a single dice as
 
 The gameplay can be summarized as:
 * If the player rolls a 1, the score nothing and it becomes the next players turn.
-* If the player rolls any other number,it is added to their total and the player's turn continues.
+* If the player rolls any other number, it is added to their total and the player's turn continues.
 * If the player chooses to "hold", their turn total is added to their score, and it becomes the next players turn.
 * First player to 100 or more points wins.
 
@@ -38,7 +38,45 @@ MIT
 
 Copyright (c) _2023_ _Patrick Dolan_
 
-## Tests
+## Planning and Pseudo Tests
+
+### Plan
+
+First I plan to figure out what object I will need and how they will interact. Based on the rules as stated in the description above I will need to track the following information:
+
+* Player 1 and Player 2 total scores and names
+* Which players turn it currently is
+* Current turn running score total
+
+Given that information it makes sense to have a player constructor that tracks player information and a game constructor that holds player objects, tracks turns, holds running score total. The game object can also contain all the game logic like turn switching and dice rolling.
+
+Player Object
+* Name
+* Score
+
+Game Object
+* Players
+* Player turn
+* Round Score
+
+### Tests
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
+
+Player Tests:
+
+```
+Describe: Player()
+```
+
+```
+Test: "Can create a Player object with basic player information"
+
+Code:
+let playerOne = new Player("Patrick");
+playerOne;
+
+Expected Output:
+{ name: "Patrick", score: 0 }
+```
 
