@@ -7,9 +7,15 @@ Player.prototype.addScore = function(roundScore) {
   this.score += roundScore;
 };
 
+function Game(playerOne, playerTwo) {
+  this.players = [playerOne, playerTwo];
+  this.playerTurn = 0;
+  this.roundScore = 0;
+}
+
 window.addEventListener("load", () => {
   let playerOne = new Player("Patrick");
-  playerOne.addScore(5);
-  playerOne.addScore(3);
-  console.log("Constructor test: ", playerOne.score);
+  let playerTwo = new Player("Abi");
+  let game = new Game(playerOne, playerTwo);
+  console.log("Constructor test: ", game);
 });

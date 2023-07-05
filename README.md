@@ -59,6 +59,15 @@ Game Object
 * Player turn
 * Round Score
 
+I've made the decision that the Players property of the Game object will be an array, and the Player turn property will be a number indicating which players turn it is based on the player array index.
+
+For example:  
+```
+If "Game.players = [playerOne, playerTwo]"  
+then "Game.playerTurn = 0" would indicate that it is playerOne's turn   
+If "Game.playerTurn = 1" it would indicate that it is playerTwo's turn
+```
+
 ### Tests
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
@@ -103,4 +112,21 @@ playerOne.score;
 
 Expected Output:
 8
+```
+
+Game Tests:
+
+```
+Describe: Game()
+```
+
+```
+Test: "Can create a Game object with basic game information"
+
+Code:
+let game = new Game(playerOne, playerTwo);
+game;
+
+Expected Output:
+{ players: [playerOne, playerTwo], playerTurn: 0, roundScore: 0 }
 ```
