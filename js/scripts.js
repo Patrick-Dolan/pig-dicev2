@@ -10,6 +10,14 @@ Player.prototype.addScore = function(roundScore) {
   this.score += roundScore;
 };
 
+Player.prototype.isWinner = function() {
+  if (this.score >= 100) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function Game() {
   this.players = [];
   this.playerTurn = 0;
@@ -37,10 +45,7 @@ Game.prototype.changeTurns = function() {
 
 window.addEventListener("load", () => {
   let playerOne = new Player("Patrick");
-  let playerTwo = new Player("Abi");
-  let game = new Game();
-  game.addPlayer(playerOne);
-  game.addPlayer(playerTwo);
-  game.changeTurns();
-  console.log("Game change turns test: ", game.playerTurn);
+  playerOne.addScore(100);
+  let result = playerOne.isWinner();
+  console.log("player isWinner true test: ", result);
 });

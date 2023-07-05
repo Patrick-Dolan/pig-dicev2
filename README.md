@@ -101,6 +101,10 @@ Expected Output:
 ```
 
 ```
+Describe: Player.prototype.addScore()
+```
+
+```
 Test: "Can add to score inside player object"
 
 Code:
@@ -113,7 +117,7 @@ Expected Output:
 ```
 
 ```
-Test: "will add to score inside player object not overwrite it"
+Test: "Will add to score inside player object not overwrite it"
 
 Code:
 let playerOne = new Player("Patrick");
@@ -123,6 +127,36 @@ playerOne.score;
 
 Expected Output:
 8
+```
+
+```
+Describe: Player.prototype.isWinner()
+```
+
+```
+Test: "Will return false if score is under 100"
+
+Code:
+let playerOne = new Player("Patrick");
+playerOne.addScore(99);
+let result = playerOne.isWinner();
+result;
+
+Expected Output:
+false
+```
+
+```
+Test: "Will return true if score is 100 or greater"
+
+Code:
+let playerOne = new Player("Patrick");
+playerOne.addScore(100);
+let result = playerOne.isWinner();
+result;
+
+Expected Output:
+true
 ```
 
 #### Game Tests:
