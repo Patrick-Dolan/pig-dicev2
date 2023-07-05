@@ -80,3 +80,27 @@ Expected Output:
 { name: "Patrick", score: 0 }
 ```
 
+```
+Test: "Can add to score inside player object"
+
+Code:
+let playerOne = new Player("Patrick");
+playerOne.addScore(5);
+playerOne.score;
+
+Expected Output:
+5
+```
+
+```
+Test: "will add to score inside player object not overwrite it"
+
+Code:
+let playerOne = new Player("Patrick");
+playerOne.addScore(5);
+playerOne.addScore(3);
+playerOne.score;
+
+Expected Output:
+8
+```
