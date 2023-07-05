@@ -52,6 +52,8 @@ Game.prototype.evaluateRoll = function(currentRoll) {
 
 Game.prototype.holdAction = function() {
   this.players[this.playerTurn].addScore(this.roundScore);
+  this.roundScore = 0;
+  this.changeTurns();
 }
 
 // UI Logic
@@ -65,5 +67,6 @@ window.addEventListener("load", () => {
   game.addPlayer(playerTwo);
   game.roundScore = 21;
   game.holdAction();
-  console.log("Game hold action player score test: ", playerOne.score);
+  console.log("Game hold action change turn test: ", game);
+  console.log("Player one still updates: ", playerOne.score);
 });

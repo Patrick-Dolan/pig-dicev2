@@ -290,3 +290,20 @@ playerOne.score;
 Expected Output:
 21
 ```
+
+```
+Test: "If player chooses to hold change player turn"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.roundScore = 21;
+game.holdAction();
+playerOne.score;
+
+Expected Output:
+{ players: [playerOne, playerTwo], playerTurn: 1, roundScore: 0, gameOver: false }
+```
