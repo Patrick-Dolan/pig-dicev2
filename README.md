@@ -302,8 +302,25 @@ game.addPlayer(playerOne);
 game.addPlayer(playerTwo);
 game.roundScore = 21;
 game.holdAction();
-playerOne.score;
+game;
 
 Expected Output:
 { players: [playerOne, playerTwo], playerTurn: 1, roundScore: 0, gameOver: false }
+```
+
+```
+Test: "If player chooses to hold and player score is 100 or greater set gameOver to true"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.roundScore = 100;
+game.holdAction();
+game;
+
+Expected Output:
+{ players: [playerOne, playerTwo], playerTurn: 1, roundScore: 0, gameOver: true }
 ```

@@ -52,6 +52,9 @@ Game.prototype.evaluateRoll = function(currentRoll) {
 
 Game.prototype.holdAction = function() {
   this.players[this.playerTurn].addScore(this.roundScore);
+  if (this.players[this.playerTurn].isWinner()) {
+    this.gameOver = true;
+  }
   this.roundScore = 0;
   this.changeTurns();
 }
@@ -65,7 +68,7 @@ window.addEventListener("load", () => {
   let playerTwo = new Player("Abi");
   game.addPlayer(playerOne);
   game.addPlayer(playerTwo);
-  game.roundScore = 21;
+  game.roundScore = 100;
   game.holdAction();
   console.log("Game hold action change turn test: ", game);
   console.log("Player one still updates: ", playerOne.score);
