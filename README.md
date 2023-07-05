@@ -269,3 +269,24 @@ game;
 Expected Output:
 { players: [playerOne, playerTwo], playerTurn: 0, roundScore: 37, gameOver: false }
 ```
+
+```
+Describe: Game.prototype.holdAction()
+```
+
+```
+Test: "If player chooses to hold add roundScore to player score"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.roundScore = 21;
+game.holdAction();
+playerOne.score;
+
+Expected Output:
+21
+```
