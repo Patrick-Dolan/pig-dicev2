@@ -79,6 +79,7 @@ At this point I think it would help to have a general outline of the flow of the
 5. Evaluate scores to determine if there is a winner.  
   (evaluate game state method) If a player's score is over 100 that player wins else keep playing.
 6. Add ability to reset game.
+
 ### Tests
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
@@ -173,7 +174,7 @@ let game = new Game();
 game;
 
 Expected Output:
-{ players: [], playerTurn: 0, roundScore: 0 }
+{ players: [], playerTurn: 0, roundScore: 0, gameOver: false }
 ```
 
 ```
@@ -190,7 +191,7 @@ game.addPlayer(playerOne);
 game;
 
 Expected Output:
-{ players: [playerOne], playerTurn: 0, roundScore: 0 }
+{ players: [playerOne], playerTurn: 0, roundScore: 0, gameOver: false }
 ```
 
 ```
@@ -227,4 +228,26 @@ game.playerTurn;
 
 Expected Output:
 1
+```
+
+```
+Describe: Game.prototype.evaluateRoll()
+```
+
+```
+Test: "If roll is 1 it will set roundScore to zero and change player turns"
+
+Code:
+let game = new Game();
+let playerOne = new Player("Patrick");
+let playerTwo = new Player("Abi");
+game.addPlayer(playerOne);
+game.addPlayer(playerTwo);
+game.roundScore = 34;
+let currentRoll = 1;
+game.evaluateRoll(currentRoll);
+game;
+
+Expected Output:
+{ players: [playerOne, playerTwo], playerTurn: 1, roundScore: 0, gameOver: false }
 ```

@@ -22,6 +22,7 @@ function Game() {
   this.players = [];
   this.playerTurn = 0;
   this.roundScore = 0;
+  this.gameOver = false;
 }
 
 Game.prototype.addPlayer = function(player) {
@@ -40,12 +41,24 @@ Game.prototype.changeTurns = function() {
   }
 }
 
+Game.prototype.evaluateRoll = function(currentRoll) {
+  if (currentRoll === 1) {
+    this.roundScore = 0;
+    this.changeTurns();
+  }
+}
+
 // UI Logic
 // ==========================
 
 window.addEventListener("load", () => {
+  let game = new Game();
   let playerOne = new Player("Patrick");
-  playerOne.addScore(100);
-  let result = playerOne.isWinner();
-  console.log("player isWinner true test: ", result);
+  let playerTwo = new Player("Abi");
+  game.addPlayer(playerOne);
+  game.addPlayer(playerTwo);
+  game.roundScore = 34;
+  let currentRoll = 1;
+  game.evaluateRoll(currentRoll);
+  console.log("Game evaluateRoll test: ", game);
 });
