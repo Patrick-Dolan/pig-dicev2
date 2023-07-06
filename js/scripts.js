@@ -80,6 +80,15 @@ function displayCurrentRoundInfo(game) {
   document.querySelector("#player-two-score-display").innerText = game.players[1].score;
 }
 
+function displayEndGameScreen(winner) {
+  document.querySelector("#winner-name-display").innerText = winner.name;
+  document.querySelector("#winner-score-display").innerText = winner.score;
+  document.querySelector("#game-display").classList.add("hidden");
+  document.querySelector("#game-display").classList.remove("show");
+  document.querySelector("#end-game-display").classList.remove("hidden");
+  document.querySelector("#end-game-display").classList.add("show");
+}
+
 window.addEventListener("load", () => {
   let game = new Game();
 
@@ -106,6 +115,12 @@ window.addEventListener("load", () => {
   });
 
   document.getElementById("hold-button").addEventListener("click", () => {
-    alert("hold clicked");
+    game.holdAction();
+    if (game.gameOver) {
+      let winner = game.getWinner();
+      displayEndGameScreen(winner);
+    } else {
+      displayCurrentRoundInfo(game);
+    }
   });
 });
