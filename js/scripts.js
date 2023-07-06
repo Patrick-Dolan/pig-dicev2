@@ -74,14 +74,15 @@ Game.prototype.getWinner = function() {
 
 window.addEventListener("load", () => {
   let game = new Game();
-  let playerOne = new Player("Patrick");
-  let playerTwo = new Player("Abi");
-  game.addPlayer(playerOne);
-  game.addPlayer(playerTwo);
-  game.roundScore = 100;
-  game.holdAction();
-  let winner = game.getWinner();
 
-  console.log("Game hold action change turn test: ", game);
-  console.log("Winner found: ", winner);
+  document.getElementById("player-name-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.querySelector("#form-display").classList.add("hidden");
+    let playerOneName = document.querySelector("#playerOneName").value;
+    let playerTwoName = document.querySelector("#playerTwoName").value;
+    let playerOne = new Player(playerOneName);
+    let playerTwo = new Player(playerTwoName);
+    game.addPlayer(playerOne);
+    game.addPlayer(playerTwo);
+  });
 });
