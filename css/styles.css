@@ -1,3 +1,10 @@
 .hidden {
   display: none;
 }
+.show {
+  display: block;
+}
+
+.display-names {
+  font-weight: 400;
+}
