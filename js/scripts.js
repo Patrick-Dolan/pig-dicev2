@@ -123,4 +123,9 @@ window.addEventListener("load", () => {
       displayCurrentRoundInfo(game);
     }
   });
+
+  document.getElementById("reset-button").addEventListener("click", () => {
+    // TODO set up method based reset instead of page refresh.
+    location.reload();
+  });
 });

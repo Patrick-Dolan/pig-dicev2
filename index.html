@@ -13,11 +13,11 @@
   <hr>
   <div id="form-display">
     <form id="player-name-form">
-      <label for="playerOneName">Player One Name:</label>
-      <input type="text" name="playerOneName" id="playerOneName" value="Patrick" required>
+      <label for="playerOneName">Player One:</label>
+      <input type="text" name="playerOneName" id="playerOneName" required>
       <br>
-      <label for="playerTwoName">Player Two Name:</label>
-      <input type="text" name="playerTwoName" id="playerTwoName" value="Abi" required>
+      <label for="playerTwoName">Player Two:</label>
+      <input type="text" name="playerTwoName" id="playerTwoName" required>
       <br>
       <button type="submit">Start Game</button>
     </form>
@@ -36,6 +36,7 @@
   <div id="end-game-display" class="hidden">
     <h2>You Win <span id="winner-name-display"></span>!</h2>
     <p>You scored <span id="winner-score-display"></span> points.</p>
+    <button id="reset-button">Play again</button>
   </div>
 </body>
 </html>
