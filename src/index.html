@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Pig Dice</title>
+</head>
+<body class="container">
+  <h1>Pig Dice</h1>
+  <hr>
+  <div id="form-display">
+    <form id="player-name-form">
+      <label for="playerOneName">Player One:</label>
+      <input type="text" name="playerOneName" id="playerOneName" required>
+      <br>
+      <label for="playerTwoName">Player Two:</label>
+      <input type="text" name="playerTwoName" id="playerTwoName" required>
+      <br>
+      <button type="submit">Start Game</button>
+    </form>
+  </div>
+  <div id="game-display" class="hidden">
+    <h3>Player One: <span id="player-one-name-display" class="display-names"></span></h3>
+    <p>Score: <span id="player-one-score-display">0</span></p>
+    <h3>Player Two: <span id="player-two-name-display" class="display-names"></span></h3>
+    <p>Score: <span id="player-two-score-display">0</span></p>
+    <h2>Current round</h2>
+    <p>Player turn: <span id="current-player-turn-display"></span></p>
+    <p>Round score: <span id="round-score-display">0</span></p>
+    <button id="roll-button">Roll</button>
+    <button id="hold-button">Hold</button>
+  </div>
+  <div id="end-game-display" class="hidden">
+    <h2>You Win <span id="winner-name-display"></span>!</h2>
+    <p>You scored <span id="winner-score-display"></span> points.</p>
+    <button id="reset-button">Play again</button>
+  </div>
+</body>
+</html>
