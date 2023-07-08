@@ -13,4 +13,4 @@ Player.prototype.isWinner = function() {
   } else {
     return false;
   }
-}
+};

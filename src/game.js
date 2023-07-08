@@ -7,11 +7,11 @@ export default function Game() {
 
 Game.prototype.addPlayer = function(player) {
   this.players.push(player);
-}
+};
 
 Game.prototype.rollDice = function() {
   return Math.floor(Math.random() * 6) + 1;
-}
+};
 
 Game.prototype.changeTurns = function() {
   if (this.playerTurn === 0) {
@@ -19,7 +19,7 @@ Game.prototype.changeTurns = function() {
   } else {
     this.playerTurn = 0;
   }
-}
+};
 
 Game.prototype.evaluateRoll = function(currentRoll) {
   if (currentRoll === 1) {
@@ -28,7 +28,7 @@ Game.prototype.evaluateRoll = function(currentRoll) {
   } else {
     this.roundScore += currentRoll;
   }
-}
+};
 
 Game.prototype.holdAction = function() {
   this.players[this.playerTurn].addScore(this.roundScore);
@@ -37,7 +37,7 @@ Game.prototype.holdAction = function() {
   }
   this.roundScore = 0;
   this.changeTurns();
-}
+};
 
 Game.prototype.getWinner = function() {
   let winner = this.players[0];
@@ -47,4 +47,4 @@ Game.prototype.getWinner = function() {
     }
   });
   return winner;
-}
+};
