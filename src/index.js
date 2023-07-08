@@ -1,5 +1,6 @@
-import Game from './game';
-import Player from './player';
+import Game from './game.js';
+import Player from './player.js';
+import './css/styles.css';
 
 // UI Logic
 // ==========================
