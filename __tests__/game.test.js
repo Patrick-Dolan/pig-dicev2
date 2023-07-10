@@ -107,4 +107,14 @@ describe("Game", () => {
       expect(game.gameOver).toBeTruthy();
     });
   })
+  
+  describe("Game.prototype.getWinner", () => {
+    test("should return player object with score of 100 or greater", () => {
+      game.addPlayer(playerOne);
+      game.addPlayer(playerTwo);
+      game.roundScore = 100;
+      game.holdAction();
+      expect(game.getWinner()).toEqual(playerOne);
+    })
+  });
 });
