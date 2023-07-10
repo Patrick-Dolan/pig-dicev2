@@ -1,5 +1,5 @@
-import Game from './game.js';
-import Player from './player.js';
+import Game from './js/game.js';
+import Player from './js/player.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
