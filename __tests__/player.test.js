@@ -24,4 +24,21 @@ describe("Player", () => {
       expect(playerOne.score).toEqual(8);
     })
   });
+
+  describe("Player.prototype.isWinner", () => {
+    test("should return false if player score is below 100", () => {
+      playerOne.addScore(99);
+      expect(playerOne.isWinner()).toBeFalsy();
+    });
+
+    test("should return true if player score is 100", () => {
+      playerOne.addScore(100);
+      expect(playerOne.isWinner()).toBeTruthy();
+    });
+
+    test("should return true if player score is greater 100", () => {
+      playerOne.addScore(108);
+      expect(playerOne.isWinner()).toBeTruthy();
+    });
+  })
 });
