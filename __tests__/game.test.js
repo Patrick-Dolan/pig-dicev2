@@ -82,4 +82,29 @@ describe("Game", () => {
       expect(game.roundScore).toEqual(3);
     });
   });
+
+  describe("Game.prototype.holdAction", () => {
+    test("should add roundScore to player score", () => {
+      game.addPlayer(playerOne);
+      game.addPlayer(playerTwo);
+      game.roundScore = 20;
+      game.holdAction();
+      expect(game.players[0].score).toEqual(20);
+    });
+
+    test("should change player turn", () => {
+      game.addPlayer(playerOne);
+      game.addPlayer(playerTwo);
+      game.holdAction();
+      expect(game.playerTurn).toEqual(1);
+    });
+
+    test("should change gameOver to true if player score is 100 or greater", () => {
+      game.addPlayer(playerOne);
+      game.addPlayer(playerTwo);
+      game.roundScore = 100;
+      game.holdAction();
+      expect(game.gameOver).toBeTruthy();
+    });
+  })
 });
