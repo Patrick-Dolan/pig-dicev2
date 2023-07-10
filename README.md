@@ -8,6 +8,8 @@
 
 * HTML, CSS, and Javascript
 * Bootstrap
+* NPM
+* Jest (Testing)
 
 ## Description
 
@@ -80,11 +82,14 @@ At this point I think it would help to have a general outline of the flow of the
   (evaluate game state method) If a player's score is over 100 that player wins else keep playing.
 6. Add ability to reset game.
 
-### Tests
+### Pseudo-code Tests
 
 This project was created using a prompt from Learnhowtoprogram.com's Fidgetech track and includes a requirement to do test pseudo code. The following are my pseudo tests:
 
-#### Player Tests:
+<details>
+<summary>Player object tests</summary>
+These are all the pseudo-code tests I created before adding Jest and getting automated testing working.
+
 
 ```
 Describe: Player()
@@ -159,6 +164,11 @@ result;
 Expected Output:
 true
 ```
+</details>
+
+<details>
+<summary>Game object tests</summary>
+These are all the pseudo-code tests I created before adding Jest and getting automated testing working.
 
 #### Game Tests:
 
@@ -346,3 +356,5 @@ winner.name;
 Expected Output:
 "Patrick"
 ```
+
+</details>
