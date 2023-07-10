@@ -1,9 +1,14 @@
 import Player from "../src/player";
 
 describe("Player", () => {
+  let playerOne;
+
+  beforeEach(() => {
+    playerOne = new Player("Patrick");
+  });
+
   test("should correctly create a player object including a player name and score", () => {
-    const newPlayer = new Player("Patrick");
-    expect(newPlayer.name).toEqual("Patrick");
-    expect(newPlayer.score).toEqual(0);
+    expect(playerOne.name).toEqual("Patrick");
+    expect(playerOne.score).toEqual(0);
   });
 });
