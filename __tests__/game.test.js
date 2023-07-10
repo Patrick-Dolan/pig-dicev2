@@ -61,4 +61,25 @@ describe("Game", () => {
       expect(game.playerTurn).toEqual(0);
     });
   })
+
+  describe("Game.prototype.evaluateRoll", () => {
+    test("should set round score to zero if roll is a 1", () => {
+      game.roundScore = 34;
+      let roll = 1;
+      game.evaluateRoll(roll);
+      expect(game.roundScore).toEqual(0);
+    });
+
+    test("should change player turn if roll is a 1", () => {
+      let roll = 1;
+      game.evaluateRoll(roll);
+      expect(game.playerTurn).toEqual(1);
+    });
+
+    test("should add roll to roundScore if roll is anything other than 1", () => {
+      let roll = 3;
+      game.evaluateRoll(roll);
+      expect(game.roundScore).toEqual(3);
+    });
+  });
 });
