@@ -32,4 +32,20 @@ describe("Game", () => {
       expect(game.players[1]).toEqual(playerTwo);
     });
   });
+
+  describe("Game.prototype.rollDice", () => {
+    test("should return a number between 1 and 6", () => {
+      const rolls = [];
+      for (let i = 0; i < 100; i++) {
+        rolls.push(game.rollDice());
+      }
+      const result = new Set(rolls);
+      expect(result).toContain(1);
+      expect(result).toContain(2);
+      expect(result).toContain(3);
+      expect(result).toContain(4);
+      expect(result).toContain(5);
+      expect(result).toContain(6);
+    })
+  });
 });
