@@ -1,4 +1,4 @@
-import Player from "../src/player";
+import Player from "../src/js/player";
 
 describe("Player", () => {
   let playerOne;
