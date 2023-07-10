@@ -48,4 +48,17 @@ describe("Game", () => {
       expect(result).toContain(6);
     })
   });
+
+  describe("Game.prototype.changeTurns", () => {
+    test("should successfully change player turn from 0 to 1", () => {
+      game.changeTurns();
+      expect(game.playerTurn).toEqual(1);
+    });
+
+    test("should successfully change player turn from 1 to 0", () => {
+      game.playerTurn = 1;
+      game.changeTurns();
+      expect(game.playerTurn).toEqual(0);
+    });
+  })
 });
