@@ -11,4 +11,11 @@ describe("Player", () => {
     expect(playerOne.name).toEqual("Patrick");
     expect(playerOne.score).toEqual(0);
   });
+
+  describe("Player.prototype.addScore", () => {
+    test("should correctly add to score inside player object", () => {
+      playerOne.addScore(5);
+      expect(playerOne.score).toEqual(5);
+    });
+  });
 });
