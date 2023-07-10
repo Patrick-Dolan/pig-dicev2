@@ -17,5 +17,11 @@ describe("Player", () => {
       playerOne.addScore(5);
       expect(playerOne.score).toEqual(5);
     });
+    
+    test("should correctly add multiple values to make cumulative score", () => {
+      playerOne.addScore(5);
+      playerOne.addScore(3);
+      expect(playerOne.score).toEqual(8);
+    })
   });
 });
