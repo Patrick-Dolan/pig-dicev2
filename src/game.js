@@ -40,7 +40,7 @@ Game.prototype.holdAction = function() {
 };
 
 Game.prototype.getWinner = function() {
-  let winner = this.players[0];
+  let winner = {score: 0};
   this.players.forEach((player) => {
     if (player.score > winner.score) {
       winner = player;
